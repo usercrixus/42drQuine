@@ -10,7 +10,8 @@ void helper() {
 
 int main(void) {
     // Comment inside main
-    char *src = "#include <stdio.h>\n\n/*\nThis is a comment outside main.\n*/\n\nvoid helper() {\n    // This is a comment inside helper function\n}\n\nint main(void) {\n    // Comment inside main\n    char *src = %c%s%c;\n    printf(src, 34, src, 34);\n    return 0;\n}\n";
-    printf("%s", src);
+    char *src = "#include <stdio.h>%c%c/*%cThis is a comment outside main.%c*/%c%cvoid helper() {%c    // This is a comment inside helper function%c}%c%cint main(void) {%c    // Comment inside main%c    char *src = %c%s%c;%c    printf(src, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 34, src, 34, 10, 10, 10, 10, 10);%c    helper();%c    return 0;%c}%c";
+    printf(src, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 34, src, 34, 10, 10, 10, 10, 10);
+    helper();
     return 0;
 }

@@ -3,19 +3,22 @@ OBJ1 = Grace.o
 OBJ2 = Sully.o
 FLAG= -Wall -Werror -Wextra
 
-ex00: $(OBJ0)
+Colleen: $(OBJ0)
 	gcc $(FLAG) -o $@ $^
 
-ex01: $(OBJ1)
+Grace: $(OBJ1)
 	gcc $(FLAG) -o $@ $^
 
-ex02: $(OBJ2)
+Sully: $(OBJ2)
 	gcc $(FLAG) -o $@ $^
 
 %.o: %.c 
 	gcc -c $< -o $@
 
 clean:
-	rm -f ex00 ex01 ex02 *.o
+	rm -f *.o
+
+fclean: clean
+	rm -f Colleen Grace Sully
 
 .PHONY: clean
